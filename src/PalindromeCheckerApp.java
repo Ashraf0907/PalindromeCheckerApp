@@ -29,7 +29,19 @@ public class PalindromeCheckerApp {
         System.out.println("Reversed string: " + reversed);
         System.out.println("Is it palindrome? (Reverse Method) : " + isPalindromeReverse);
         System.out.println("Is it a palindrome? : " + isPalindrome);
-
+        char[] chars = input.toCharArray();
+        boolean isPalindromeCharArray = true;
+        int start = 0;
+        int end = chars.length - 1;
+        while (start < end) {
+            if (chars[start] != chars[end]) {
+                isPalindromeCharArray = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+        System.out.println("Is it palindrome? (Char Array Method) : " + isPalindromeCharArray);
         sc.close();
     }
 }
